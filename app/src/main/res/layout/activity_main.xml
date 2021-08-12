@@ -8,21 +8,25 @@
     tools:context=".MainActivity">
 
     <com.skyfishjy.library.RippleBackground
+        android:id="@+id/sos"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/sos"
         app:rb_color="#ef4567"
+        app:rb_duration="3000"
         app:rb_radius="34dp"
         app:rb_rippleAmount="4"
-        app:rb_duration="3000"
-        app:rb_scale="6">
+        app:rb_scale="6"
+        tools:layout_editor_absoluteX="121dp"
+        tools:layout_editor_absoluteY="0dp">
+
         <ImageView
+            android:id="@+id/image"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_centerInParent="true"
-            android:id="@+id/image"
-            android:src="@drawable/sos"
-            />
+            android:src="@drawable/sos" />
+
+
     </com.skyfishjy.library.RippleBackground>
 
     <Button
@@ -46,6 +50,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.827" />
+
+    <ImageView
+        android:id="@+id/numberView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_settings_24" />
 
 
 

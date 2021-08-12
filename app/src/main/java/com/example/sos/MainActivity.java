@@ -12,55 +12,32 @@ import com.skyfishjy.library.RippleBackground;
 
 public class MainActivity extends AppCompatActivity {
     RippleBackground rippleBackground;
-    ImageView imageView;
-    public Button customsms;
-    public Button button;
+    ImageView imageView,numberView;
+    public Button customSMS;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //button = (Button)findViewById(R.id.button);
-        customsms = (Button)findViewById(R.id.cussms);
-        rippleBackground = (RippleBackground)findViewById(R.id.sos);
-        imageView = (ImageView)findViewById(R.id.image);
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(!rippleBackground.isRippleAnimationRunning()){;
-                    rippleBackground.startRippleAnimation();
-                    openSOSActivity();
-                }
-                else{
-                    imageView.setColorFilter(null);
-
-                    rippleBackground.stopRippleAnimation();
-                }
+        customSMS = findViewById(R.id.cussms);
+        rippleBackground = findViewById(R.id.sos);
+        imageView = findViewById(R.id.image);
+        numberView = findViewById(R.id.numberView);
+        imageView.setOnClickListener(v -> {
+            if(!rippleBackground.isRippleAnimationRunning()){;
+                rippleBackground.startRippleAnimation();
+                startActivity(new Intent(getApplicationContext(),MapsActivity.class));
 
             }
-        });
-        customsms.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                    openSendActivity();
-                }
-        });
-        /*button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openSOSActivity();
-            }
-        });
-        */
+            else{
+                imageView.setColorFilter(null);
 
-    }
-    public void openSOSActivity() {
-        Intent sosintent = new Intent(MainActivity.this,MapsActivity.class);
-        startActivity(sosintent);
-    }
-    public void openSendActivity(){
-        Intent sendintent = new Intent(MainActivity.this,sendActivity.class);
-        startActivity(sendintent);
+                rippleBackground.stopRippleAnimation();
+            }
+
+        });
+        customSMS.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),sendActivity.class)));
+        numberView.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(),number_activity.class)));
     }
 }

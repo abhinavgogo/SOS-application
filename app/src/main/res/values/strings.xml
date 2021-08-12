@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">SOS</string>
     <string name="title_activity_maps">Map</string>
+    <string name="number_1">Number 1</string>
+    <string name="number_2">Number 2</string>
+    <string name="number_3">Number 3</string>
 </resources>

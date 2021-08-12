@@ -24,16 +24,13 @@ public class sendActivity extends AppCompatActivity {
         message = findViewById(R.id.msg);
         send = findViewById(R.id.sendbtn);
 
-        send.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
-                    if(checkSelfPermission(Manifest.permission.SEND_SMS)== PackageManager.PERMISSION_GRANTED){
-                        sendSMS();
-                    }
-                    else{
-                        requestPermissions(new String[]{Manifest.permission.SEND_SMS},1);
-                    }
+        send.setOnClickListener(v -> {
+            if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
+                if(checkSelfPermission(Manifest.permission.SEND_SMS)== PackageManager.PERMISSION_GRANTED){
+                    sendSMS();
+                }
+                else{
+                    requestPermissions(new String[]{Manifest.permission.SEND_SMS},1);
                 }
             }
         });
