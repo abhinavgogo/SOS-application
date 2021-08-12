@@ -38,6 +38,6 @@ public class MainActivity extends AppCompatActivity {
 
         });
         customSMS.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),sendActivity.class)));
-        numberView.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(),number_activity.class)));
+        numberView.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(),contactActivity.class)));
     }
 }

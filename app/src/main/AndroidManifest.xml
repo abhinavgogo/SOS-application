@@ -21,6 +21,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SOS">
         <activity
+            android:name=".contactActivity"
+            android:exported="true" />
+        <activity
             android:name=".number_activity"
             android:exported="true" />
         <activity android:name=".sendActivity" />
@@ -39,7 +42,8 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
